@@ -473,6 +473,17 @@ class cloudflare_api
         );
         return $this->http_post($data, 'HOST');
     }
+    
+    public function full_zone_set($key, $zone)
+    {
+
+        $data = array(
+            'act'        => 'full_zone_set',
+            'user_key'   => $key,
+            'zone_name'  => $zone
+        );
+        return $this->http_post($data, 'HOST');
+    }
 
     public function user_lookup($email, $isID = false)
     {
