@@ -108,11 +108,12 @@ class cloudflare_api
      * 3.3 - Retrieve DNS Records Of A Given Domain
      * This function retrieves the current DNS records for a particular website.
      */
-    public function rec_load_all($domain)
+    public function rec_load_all($domain, $offset = 0)
     {
         $data = array(
             'a' => 'rec_load_all',
-            'z' => $domain
+            'z' => $domain,
+            'o' => $offset
         );
         return $this->http_post($data);
     }
